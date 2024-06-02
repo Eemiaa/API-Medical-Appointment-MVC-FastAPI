@@ -5,6 +5,8 @@ router = APIRouter(
     tags=['Session']
 )
 
-@router.get("/hello/", status_code=status)
-async def hello_world():
-    return {"hello":"world"}
+class SessionController:
+
+    @router.get("/hello/", status_code=status.HTTP_200_OK) #response_model
+    async def hello_world():
+        return {"hello":"world"}
