@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from controllers import Session
+from src.controllers import SessionController
 origins = ["*"]
 
 def create_app():
@@ -13,7 +13,7 @@ def create_app():
         allow_headers=["*"],
     )
 
-    app.include_router(Session.router)
+    app.include_router(SessionController.router)
     return app
 
 app = create_app()
